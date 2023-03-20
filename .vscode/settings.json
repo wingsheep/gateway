@@ -5,6 +5,7 @@
     "CORPID",
     "mpnews",
     "nestjs",
+    "openai",
     "typeorm"
   ]
 }

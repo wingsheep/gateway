@@ -24,6 +24,7 @@ async function bootstrap() {
   const fastifyInstance = fastify({
     logger: FastifyLogger,
   });
+  fastifyInstance.register(require('@fastify/multipart'));
 
   // 内置Nodejs web框架Fastify
   const app = await NestFactory.create<NestFastifyApplication>(
@@ -54,6 +55,7 @@ async function bootstrap() {
     module.hot.accept();
     module.hot.dispose(() => app.close());
   }
+  app.enableCors();
 
   await app.listen(3000);
 }
